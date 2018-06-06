@@ -7,7 +7,7 @@ use Algo\Collection\LargestNumber;
 
 class LargestNumberTest extends TestCase
 {
-    /** @var LargestNumber\ */
+    /** @var LargestNumber */
     protected $largestNumber;
 
     protected function setUp()
