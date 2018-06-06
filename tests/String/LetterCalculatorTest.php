@@ -50,10 +50,10 @@ class LetterCalculatorTest extends TestCase
         $this->assertArrayHasKey('s', $actual);
 
         # check whether it gives correct counts
-        $this->assertEquals($actual['b'], 3);
-        $this->assertEquals($actual['o'], 2);
-        $this->assertEquals($actual['a'], 1);
-        $this->assertEquals($actual['s'], 1);
+        $this->assertEquals(3, $actual['b']);
+        $this->assertEquals(2, $actual['o']);
+        $this->assertEquals(1, $actual['a']);
+        $this->assertEquals(1, $actual['s']);
 
     }
 
