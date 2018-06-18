@@ -137,4 +137,44 @@ class CollectionTest extends TestCase {
 
         $this->assertTrue(true);
     }
+
+    public function test_when_collection_consists_of_same_items_remove_should_remove_them_all()
+    {
+        $this->collection->append(25);
+        $this->collection->append(25);
+        $this->collection->append(25);
+        $this->collection->append(25);
+        $this->collection->append(25);
+        $this->collection->remove(25);
+
+        $size = $this->collection->getSize();
+
+        $this->assertEquals(0, $size);
+    }
+
+    public function test_when_removing_first_three_identical_items_it_should_keep_all_others()
+    {
+        $this->collection->append("hi");
+        $this->collection->append("hi");
+        $this->collection->append("hi");
+        $this->collection->append("larry");
+        $this->collection->append("where");
+        $this->collection->append("are");
+        $this->collection->append("you");
+        $this->collection->remove('hi');
+
+        $actual = $this->collection->get(0);
+
+        $this->assertEquals("larry", $actual);
+    }
+
+    public function test_get_should_return_value_at_that_index_when_only_element_is_given() {
+        $this->collection->append("my");
+        $this->collection->append("name");
+        $this->collection->append("is");
+
+        $actual = $this->collection->get('name');
+
+        $this->assertEquals(1, $actual);
+    }
 }
